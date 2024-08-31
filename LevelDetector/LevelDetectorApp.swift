@@ -11,7 +11,7 @@ import SwiftUI
 struct LevelDetectorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LevelDetectorView()
         }
     }
 }
