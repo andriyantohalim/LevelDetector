@@ -24,7 +24,10 @@ struct LevelDetectorView: View {
                 .foregroundColor(viewModel.isLevel ? .green : .red)
                 .onChange(of: viewModel.isLevel) {
                     if viewModel.isLevel {
-                        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+//                        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                        let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+                        feedbackGenerator.prepare() // Prepares the feedback for a faster response
+                        feedbackGenerator.impactOccurred() // Trigger feedback
                     }
                 }
         }
